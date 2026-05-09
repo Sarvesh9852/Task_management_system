@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const User = require('../models/user');
+const User = require('../models/User');
 const env = require('dotenv').config
 
 // Verify JWT token
@@ -54,7 +54,7 @@ exports.restrictTo = (...roles) => {
 // Check project membership
 exports.checkProjectMember = async (req, res, next) => {
   try {
-    const Project = require('../models/project');
+    const Project = require('../models/Project');
     const projectId = req.params.projectId || req.body.project || req.query.project;
 
     if (!projectId) return next();

@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const { body, validationResult } = require('express-validator');
-const Project = require('../models/project');
-const Task = require('../models/task');
-const User = require('../models/user');
+const Project = require('../models/Project');
+const Task = require('../models/Task');
+const User = require('../models/User');
 const { protect, checkProjectMember, requireProjectAdmin } = require('../middleware/auth');
 
 // All routes require authentication
