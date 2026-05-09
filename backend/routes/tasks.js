@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const { body, query, validationResult } = require('express-validator');
-const Task = require('../models/Task');
-const Project = require('../models/Project');
+const Task = require('../models/task');
+const Project = require('../models/project');
 const { protect, checkProjectMember } = require('../middleware/auth');
 
 router.use(protect);

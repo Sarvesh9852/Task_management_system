@@ -1,0 +1,17 @@
+[build]
+builder = "NIXPACKS"
+# Auto-detect Node.js project
+
+buildCommand = "npm install && npm run build"
+# Step 1: install packages
+# Step 2: compile React → creates dist/ folder with HTML/CSS/JS files
+
+[deploy]
+startCommand = "npx serve dist -s -l $PORT"
+# 'serve' = a simple web server that serves static files
+# 'dist'  = the folder created by 'npm run build'
+# '-s'    = single page app mode (all routes go to index.html)
+# '$PORT' = Railway automatically provides the port number
+
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
